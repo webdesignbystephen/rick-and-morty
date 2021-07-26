@@ -1,0 +1,31 @@
+.Spinner {
+    width: 40px;
+    height: 40px;
+    border-top: 8px solid #C2C108;
+    border-bottom: 8px solid #C2C108;
+    border-left: 8px solid #3C6D91;
+    border-right: 8px solid #3C6D91;
+    border-radius: 50%;
+    -webkit-animation: spin 1000ms linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+@media screen and (max-width: 767px) {
+    .Spinner  {
+        width: 24px;
+        height: 24px;
+        border-top: 6px solid #C2C108;
+        border-bottom: 6px solid #C2C108;
+        border-left: 6px solid #3C6D91;
+        border-right: 6px solid #3C6D91;
+    }
+}

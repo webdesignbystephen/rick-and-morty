@@ -1,0 +1,19 @@
+.LocationsHeading {
+    color: #7032CD;
+}
+
+.LocationsList {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.LocationsList li {
+    margin: 0 0 1.5em 0;
+}
+
+.ResidentList {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

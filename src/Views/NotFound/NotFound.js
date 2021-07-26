@@ -4,7 +4,8 @@ import classes from './NotFound.module.css';
 const NotFound = () => {
 
     return (
-        <>Not Found
+        <>
+            <h1>404 - Page Not Found</h1>
         </>
     );
 }

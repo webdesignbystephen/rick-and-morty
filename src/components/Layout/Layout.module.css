@@ -1,0 +1,9 @@
+.Layout {
+    padding: 2em 2em 2em 4em;
+}
+
+@media screen and (max-width: 767px) {
+    .Layout {
+        padding: 1em 1em 1em 1em;
+    }
+}

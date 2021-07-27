@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import Collapsible from '../../components/Collapsible/Collapsible';
 import CharacterCard from '../../components/CharacterCard/CharacterCard';
@@ -29,7 +29,7 @@ const Locations = () => {
         }
     `;
 
-    const { loading, error, data } = useQuery(LOCATIONS_QUERY);
+    const  {loading, error, data } = useQuery(LOCATIONS_QUERY);
 
     let queryResults;
     if (loading) {
@@ -53,10 +53,10 @@ const Locations = () => {
                         (residents.length >= 1)
                         ? <ul className={classes.ResidentList}>
                             {residents.map((resident) => {
-                                console.log('status', resident.status);
                                 return (
                                     <li>
                                         <CharacterCard
+                                            id={resident.id}
                                             name={resident.name}
                                             image={resident.image}
                                             status={resident.status}

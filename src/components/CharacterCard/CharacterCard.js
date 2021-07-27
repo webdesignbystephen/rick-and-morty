@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory, Link } from 'react-router-dom';
 
 import classes from './CharacterCard.module.css';
 
@@ -20,6 +21,7 @@ const CharacterCard = (props) => {
     }
 
     return (
+        <Link className={classes.CharacterLink} to={`/character/${props.id}`}>
         <div className={classes.CharacterCard} tabIndex='0'>
             <img src={props.image} alt={`image for resident ${props.name}`} />
             <div className={classes.CharacterDetails}>
@@ -27,6 +29,7 @@ const CharacterCard = (props) => {
                 <span className={classes.CharacterStatus}><span className={statusBubbleClasses.join(' ')}></span>{props.status}</span>
             </div>
         </div>
+        </Link>
     );
 }
 

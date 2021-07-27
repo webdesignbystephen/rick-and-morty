@@ -11,7 +11,7 @@ function App() {
         <Layout>
             <Switch>
                 <Route path='/locations' component={Locations} />
-                <Route path='/characters/:id' component={Character} />
+                <Route path='/character/:id' component={Character} />
                 <Redirect from='/' to='locations' exact />
                 <Route component={NotFound} />
             </Switch>

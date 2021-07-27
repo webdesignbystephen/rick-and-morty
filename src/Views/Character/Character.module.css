@@ -1,0 +1,88 @@
+.Character {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 1em;
+    overflow-y: scroll;
+}
+
+.CharacterDetails {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+}
+
+.CharacterInfo {
+    display: grid;
+    row-gap: .75em;
+    padding: 1em 2em;
+    box-sizing: border-box;
+}
+
+.CharacterName {
+    font-size: 2em;
+    font-family: Roboto, sans-serif;
+    font-weight: 600;
+}
+
+.Status {
+    display: flex;
+    flex-direction: row;
+}
+
+.StatusBubble {
+    width: 16px;
+    height: 16px;
+    display: block;
+    margin-right: 1em;
+    border-radius: 50%;
+}
+
+.StatusAlive {
+    background-color: green;
+}
+
+.StatusDead {
+    background-color: red;
+}
+
+.StatusUnknown {
+    background-color: grey;
+}
+
+.CharacterType {
+    display: flex;
+    flex-direction: row;
+}
+
+.CharacterType span:not(:first-of-type) {
+    margin-left: 4em;
+}
+
+.Locations {
+    display: grid;
+}
+
+.Locations * {
+    line-height: 1.25;
+}
+
+.Locations b:not(:first-of-type) {
+    margin-top: 1em;
+}
+
+@media screen and (max-width: 767px) {
+    .CharacterDetails {
+        margin-bottom: 1em;
+    }
+
+    .CharacterInfo {
+        padding: 1em 1em;
+    }
+
+    .CharacterName {
+        font-size: 1.5em;
+    }
+}

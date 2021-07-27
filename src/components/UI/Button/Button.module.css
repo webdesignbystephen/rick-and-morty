@@ -4,17 +4,22 @@
     font-size: 1em;
     background-color: #C69339;
     border: 1px solid #000000;
+    border-radius: 6px;
     cursor: pointer;
 }
 
 .Button:hover,
 .Button:focus {
-    background-color: #DA974D;
+    background-color: #DA973D;
+}
+
+.Button:active {
+    background-color: #E6A349;
 }
 
 @media screen and (max-width: 767px) {
     .Button  {
-        padding: .25em .5em;
         font-size: .75em;
+        border-radius: 4px;
     }
 }

@@ -1,0 +1,60 @@
+.CharacterCard {
+    /* width: 100%; */
+    width: 200px;
+    /* max-width: 300px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 8px;
+    /* background-color: red; */
+    box-shadow: 0px 1px 3px 1px #888888;
+    cursor: pointer;
+}
+
+.CharacterCard:hover,
+.CharacterCard:focus {
+    box-shadow: 0px 1px 5px 3px #888888;
+}
+
+.CharacterCard img {
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.CharacterDetails {
+    margin-top: 1em;
+    padding: 1em;
+}
+
+.CharacterName {
+    width: 100%;
+    font-size: 1.25em;
+}
+
+.CharacterStatus {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+}
+
+.StatusBubble {
+    width: 16px;
+    height: 16px;
+    display: block;
+    margin-right: 1em;
+    border-radius: 50%;
+    background-color: green;
+}
+
+.StatusAlive {
+    background-color: green;
+}
+
+.StatusDead {
+    background-color: red;
+}
+
+.StatusUnknown {
+    background-color: grey;
+}

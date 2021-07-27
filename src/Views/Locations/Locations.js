@@ -1,13 +1,17 @@
 import React, { useEffect } from 'react';
 
 import Collapsible from '../../components/Collapsible/Collapsible';
+import CharacterCard from '../../components/CharacterCard/CharacterCard';
 import Modal from '../../components/UI/Modal/Modal';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import useWindowWidth from '../../hooks/useWindowWidth';
 import { gql, useQuery } from '@apollo/client';
 
 import classes from './Locations.module.css';
 
 const Locations = () => {
+    const windowWidth = useWindowWidth();
+
     const LOCATIONS_QUERY = gql `
         query GetLocations {
             locations {
@@ -29,12 +33,16 @@ const Locations = () => {
 
     let queryResults;
     if (loading) {
-        queryResults = <Modal>
-                    <Spinner />
-                </Modal>;
+        queryResults =
+            <Modal>
+                <Spinner />
+            </Modal>;
     }
     else if (error) {
-        queryResults = <p>We're sorry but an error occurred while retrieving location data.</p>;
+        queryResults =
+            <Modal>
+                <span className={classes.FetchingErrorMessage}>We're sorry but an error occurred while retrieving location data.</span>
+            </Modal>;
     }
     else {
         console.log(data);
@@ -45,9 +53,14 @@ const Locations = () => {
                         (residents.length >= 1)
                         ? <ul className={classes.ResidentList}>
                             {residents.map((resident) => {
+                                console.log('status', resident.status);
                                 return (
                                     <li>
-                                        character card
+                                        <CharacterCard
+                                            name={resident.name}
+                                            image={resident.image}
+                                            status={resident.status}
+                                        />
                                     </li>
                                 )
                             })}
@@ -55,7 +68,12 @@ const Locations = () => {
                         : <b>No Residents</b>
                     return (
                         <li>
-                            <Collapsible name={name} type={type} content={collapsibleContent} />
+                            <Collapsible
+                                name={name}
+                                type={type}
+                                content={collapsibleContent}
+                                viewportWidth={windowWidth}
+                            />
                         </li>
                     )
                 })}

@@ -18,7 +18,7 @@ const Collapsible = (props) => {
         else {
             panelRef.current.style.maxHeight = panelRef.current.scrollHeight + 'px';
         }
-    }, [showPanel]);
+    }, [showPanel, props.viewportWidth]);
 
     return (
         <div className={classes.Collapsible}>
@@ -35,7 +35,7 @@ const Collapsible = (props) => {
             <div
                 className={classes.Panel}
                 ref={panelRef}
-                onClick={() => setShowPanel(false)}>
+            >
                 <div className={classes.Content}>
                     {props.content}
                 </div>

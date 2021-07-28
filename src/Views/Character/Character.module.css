@@ -4,6 +4,8 @@
     justify-content: flex-start;
     align-items: flex-start;
     margin: 1em;
+    padding: 1em;
+    box-sizing: border-box;
     overflow-y: scroll;
 }
 
@@ -22,7 +24,7 @@
 }
 
 .CharacterName {
-    font-size: 2em;
+    font-size: 1.8em;
     font-family: Roboto, sans-serif;
     font-weight: 600;
 }
@@ -76,6 +78,7 @@
 @media screen and (max-width: 767px) {
     .CharacterDetails {
         margin-bottom: 1em;
+        font-size: .9em;
     }
 
     .CharacterInfo {
@@ -83,6 +86,6 @@
     }
 
     .CharacterName {
-        font-size: 1.5em;
+        font-size: 1.4em;
     }
 }

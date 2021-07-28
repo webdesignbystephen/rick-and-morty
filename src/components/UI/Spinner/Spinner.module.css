@@ -1,12 +1,21 @@
 .Spinner {
     width: 40px;
     height: 40px;
+    position: absolute;
     border-top: 8px solid #C2C108;
     border-bottom: 8px solid #C2C108;
     border-left: 8px solid #3C6D91;
     border-right: 8px solid #3C6D91;
     border-radius: 50%;
+    z-index: 200;
+    -moz-animation: spin 1000ms linear infinite;
     -webkit-animation: spin 1000ms linear infinite;
+    animation: spin 1000ms linear infinite;
+}
+
+@-moz-keyframes spin {
+    0% {-moz-transform: rotate(0deg);}
+    100% {-moz-transform: rotate(360deg);}
 }
 
 @-webkit-keyframes spin {

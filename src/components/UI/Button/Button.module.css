@@ -5,12 +5,23 @@
     background-color: #C69339;
     border: 1px solid #000000;
     border-radius: 6px;
+    -moz-box-shadow: 0px 0px 1px 1px rgba(86, 86, 86, 1);
+    -webkit-box-shadow: 0px 0px 1px 1px rgba(86, 86, 86, 1);
+    box-shadow: 0px 0px 1px 1px rgba(86, 86, 86, 1);
     cursor: pointer;
 }
 
 .Button:hover,
 .Button:focus {
     background-color: #DA973D;
+    -moz-box-shadow: 0px 0px 3px 1px rgba(86, 86, 86, 1);
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(86, 86, 86, 1);
+    box-shadow: 0px 0px 3px 1px rgba(86, 86, 86, 1);
+}
+
+.Button:disabled {
+    background-color: #C69339;
+    cursor: default;
 }
 
 .Button:active {

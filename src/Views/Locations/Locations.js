@@ -16,6 +16,7 @@ const Locations = () => {
         query GetLocations {
             locations {
                 results {
+                    id,
                     name,
                     type,
                     residents {
@@ -45,16 +46,15 @@ const Locations = () => {
             </Modal>;
     }
     else {
-        console.log(data);
         queryResults = (
             <ul className={classes.LocationsList}>
-                {data.locations.results.map(({ name, type, residents }) => {
+                {data.locations.results.map(({ id, name, type, residents }) => {
                     const collapsibleContent =
                         (residents.length >= 1)
                         ? <ul className={classes.ResidentList}>
                             {residents.map((resident) => {
                                 return (
-                                    <li>
+                                    <li key={resident.id}>
                                         <CharacterCard
                                             id={resident.id}
                                             name={resident.name}
@@ -67,7 +67,7 @@ const Locations = () => {
                         </ul>
                         : <b>No Residents</b>
                     return (
-                        <li>
+                        <li key={id}>
                             <Collapsible
                                 name={name}
                                 type={type}

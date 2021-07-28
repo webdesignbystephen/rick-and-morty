@@ -22,13 +22,19 @@ const CharacterCard = (props) => {
 
     return (
         <Link className={classes.CharacterLink} to={`/character/${props.id}`}>
-        <div className={classes.CharacterCard} tabIndex='0'>
-            <img src={props.image} alt={`resident ${props.name}`} />
-            <div className={classes.CharacterDetails}>
-                <span className={classes.CharacterName}>{props.name}</span>
-                <span className={classes.CharacterStatus}><span className={statusBubbleClasses.join(' ')}></span>{props.status}</span>
+            <div className={classes.CharacterCard}>
+                <img
+                    src={props.image}
+                    alt={`resident ${props.name}`}
+                />
+                <div className={classes.CharacterDetails}>
+                    <span className={classes.CharacterName}>{props.name}</span>
+                    <span className={classes.CharacterStatus}>
+                        <span className={statusBubbleClasses.join(' ')}></span>
+                        {props.status}
+                    </span>
+                </div>
             </div>
-        </div>
         </Link>
     );
 }

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, NavLink } from 'react-router-dom';
 import axios from 'axios';
 
 import Button from '../../components/UI/Button/Button';
 import Modal from '../../components/UI/Modal/Modal';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import NotesForm from '../../components/NotesForm/NotesForm';
 import classes from './Character.module.css';
 
 const Character = (props) => {
@@ -12,6 +13,7 @@ const Character = (props) => {
     const [error, setError] = useState(false);
     const [characterDetails, setCharacterDetails] = useState(null);
     const [showNotesModal, setShowNotesModal] = useState(false);
+    const [lastFocused, setLastFocused] = useState(null);
     const { id } = useParams();
 
     useEffect(() => {
@@ -28,6 +30,17 @@ const Character = (props) => {
                 setLoading(false);
             })
     }, [id]);
+
+    const openNotesModal = (event) => {
+        event.preventDefault();
+        setLastFocused(event.target);
+        setShowNotesModal(true);
+    }
+
+    const closeNotesModal = (event) => {
+        setShowNotesModal(false);
+        lastFocused.focus();
+    }
 
     let details;
     if (loading) {
@@ -79,8 +92,24 @@ const Character = (props) => {
                 </div>
                 <Button
                     text={'Add Notes'}
-                    clicked={() => setShowNotesModal(true)}
+                    clicked={(event) => openNotesModal(event)}
                 />
+                <NavLink
+                    to='/locations'
+                    style={ {marginTop: '3em'} }
+                >
+                    Back to Locations...
+                </NavLink>
+                {
+                    showNotesModal
+                    ? <Modal>
+                        <NotesForm
+                            cancelButtonClicked={() => closeNotesModal()}
+                            closeButtonClicked={() => closeNotesModal()}
+                        />
+                    </Modal>
+                    : null
+                }
             </div>;
     }
 

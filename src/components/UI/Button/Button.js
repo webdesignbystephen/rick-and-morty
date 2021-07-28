@@ -3,11 +3,12 @@ import React from 'react';
 import classes from './Button.module.css';
 
 const Button = (props) => {
-
     return (
         <button
             className={classes.Button}
-            onClick={props.clicked}>
+            onClick={props.clicked}
+            disabled={props.disabled}
+        >
             {props.text}
         </button>
     );
